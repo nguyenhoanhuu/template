@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dịch chuyển sang trang thêm  -->
+    <a href="/view/save">Thêm báo mới</a>
+
+    <!-- trang hiển thị danh sách báo đã được thêm -->
+    <table class="table">
+        <h1 class="header">DANH SÁCH BÁO MỚI</h1>
+        <!-- <input type="submit" value="delete" /> -->
+        <tr>
+            <th>STT</th>
+            <th>ma san pham</th>
+            <th>ten san pham</th>
+            <th>don gia</th>
+            <th>so luong</th>
+            <th>Hành động</th>
+        </tr>
+
+        <%for(let i=0; i < data.length; i++) {%>
+            <tr>
+                <td>
+                    <%=i+1%>
+                </td>
+                <td>
+                    <%=data[i].sp_id%>
+                </td>
+                <td>
+                    <%=data[i].ten_sp%>
+                </td>
+                <td>
+                    <%=data[i].don_gia%>
+                </td>
+                <td>
+                    <%=data[i].so_luong%>
+                </td>
+                
+                <!-- nút thực hiện hành động xoá -->
+                <td>
+                    <form id="delete" action="/delete" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="sp_id" value="<%=data[i].sp_id%>" />
+                        <button type="submit">delete</button>
+                    </form>
+                </td>
+                <%}%>
+            </tr>
+    </table>
+    </div>
+
+</html>

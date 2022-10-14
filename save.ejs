@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lưu</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <form action="/save" method="POST" enctype="multipart/form-data">
+
+                <label for="sp_id">ma san pham </label> <br/>
+                <input  type="text" id="sp_id" name="sp_id" required="required"/> <br/>
+
+                <label for="ten_sp">ten san pham</label> <br/>
+                <input  type="text" id="ten_sp" name="ten_sp" required="required"/> <br/>
+
+                <label for="don_gia">don gia san pham</label> <br/>
+                <input  type="text" id="don_gia" name="don_gia" required="required" pattern="^[0-9]+" title="Phải nhập số dương"/> <br/>
+
+                <label for="so_luong">so luong san pham</label> <br/>
+                <input  type="text" id="so_luong" name="so_luong" required="required" pattern="^[0-9]+"/> <br/>
+
+                <button class="btnSubmit" type="submit">add</button>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
